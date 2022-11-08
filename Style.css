@@ -1,0 +1,420 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Add linear gradient for background with  */
+body{
+    background:
+    linear-gradient(135deg, #ffffff 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+    linear-gradient(225deg, #ffffff 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+    background-color:#ffffff;
+    background-size: 64px 128px;    
+}
+/* fonts */
+@font-face {
+    font-family: 'Comfortaa';
+    src: url(fonts/Comfortaa-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'NunitoSans';
+    src: url(fonts/NunitoSans-Bold.ttf);
+}
+/*===================================== Nav Bar =====================================*/
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    background:
+    linear-gradient(135deg, #ffffff 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+    linear-gradient(225deg, #ffffff 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+    background-color:#ffffff;
+    background-size: 64px 128px;    
+
+}
+.heading a{
+    text-shadow: #000;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    font-family: 'Comfortaa';
+    text-shadow: 1px 1px 2px rgb(190, 192, 192), 0 0 1em rgba(142, 151, 155, 0.988);
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    position: relative;
+}
+nav ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'NunitoSans';
+}
+nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #4760dd;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+/*===================================== Home Page =====================================*/
+#home{
+    padding: 150px 25px 80px 25px;
+}
+#home>.main{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.main .info{
+    background-image: url(files/IMG-20210425-WA0002.jpg);
+    width: 80%;
+    border-radius: 15px;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    z-index: -1;
+}
+.main .info div{
+    text-align:left;
+    position: absolute;
+    bottom: 40px;
+    background: rgba(84, 84, 84, 0.4);
+    padding: 4rem 1rem;
+    width: 50%;
+    color: rgba(255,255,255,.8);
+}
+.sideInfo , .skills{
+    width: 270px;
+    padding: 1.8rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -7px;
+    z-index: -1;
+}
+.sideInfo span a img{
+    width: 100px;
+    padding: 15px;
+    display: block;
+    
+}
+.name{
+    font-size: 50px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: typing 3.5s steps(40, end);
+}
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+/* select all p tags */
+.info p:not(:nth-child(1)){
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 10px;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    transform: scale(0.94);
+    animation: text-effect  0.8s 0.2s forwards cubic-bezier(0.11, 0.3, 0.5, 0.3);
+    animation-duration: 3s;
+    animation-delay: 2s;
+    opacity: 0;
+    filter: blur(6px);
+}
+@keyframes text-effect {
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+        }
+}
+.info p:nth-child(1){
+font-size: 30px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*===================================== About Page =====================================*/
+#about{
+    padding: 80px 50px;
+    margin: 0 50px;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+h1{
+    font-size: 45px;
+}
+h1:not(.title, .name){
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.content .about-img{
+    padding-left: 25px;
+    flex-basis: 35%;
+}
+img[alt="About-Image"]{
+    width: 350px;
+    border-radius: 0 50px 0 50px;
+}
+.content .description p{
+    padding-top: 15px;
+    width: 90%;
+    text-align: justify;
+    font-size: 18px;
+}
+.description{
+    flex-basis: 60%;
+}
+.skills{
+    margin: 20px 0;
+    width: 600px;
+}
+.skills>.list>p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.skills .list .skills-content .info{
+    margin: 15px 0;
+}
+.skills .list .skills-content .info:first-child{
+    margin-top: 30px;
+}
+.info>span{
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+    100%{
+        opacity: 1;
+    }
+}
+progress{
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+/*===================================== Blogs Page =====================================*/
+#blogs{
+    padding: 25px 15px 30px;
+}
+
+#blogs section{
+    display: flex;
+    align-items: center;
+    padding: 25px 60px;
+}
+#blogs section a{
+    text-decoration: none;
+    display: flex;
+    color: #000;
+    transition: border 1s;
+}
+#blogs section a:hover {
+    border: 2px solid grey;
+    border-width: 10px;
+}
+#blogs section a img{
+    width: 350px;
+    height: 400px;
+}
+#blogs section a div{
+    background: rgb(255, 255, 255);
+    text-align: left;
+    width: 350px;
+    height: 400px;
+    padding: 25% 10px;
+}
+#blogs section a div>.title{
+    font-size: 25px;
+}
+
+/*===================================== Contact Page =====================================*/
+#contact{
+    padding: 80px 30px;
+}
+.contactInfo{
+    flex-basis: 35%;
+    padding-left: 15px;
+}
+.contactInfo img{
+    border-radius: 50%;
+    width: 250px;
+    padding-top: 10px;
+}
+.contactForm{
+    flex-basis: 60%;
+}
+.contactInfo div a{
+    text-decoration: none;
+    color: #000;
+}
+/* add generated content using pseudo element ::before and child combinator */
+.contactInfo>div>a::before{
+    content: "\2709";
+    color: #4760dd;
+    padding-right: 5px;
+}
+.contactInfo>div>p::before{
+    content: "\2706";
+    color: #4760dd;
+    font-weight: 700;
+    padding-right: 5px;
+}
+.contactInfo div{
+    padding-top: 25px;
+    font-style: italic;
+}
+.contactInfo a, .contactInfo p{
+    font-size: 18px;
+}
+form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 90%;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    text-decoration: none; 
+    letter-spacing: 1px;
+}
+button{
+    padding: 10px 40px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: hsla(225, 88%, 54%, 0.907);
+    color: #fff;
+    border-radius: 15px;
+    border: 0;
+}
+input:invalid{
+    border: 2px solid red;
+} 
+input:valid{
+    border: 2px solid rgb(9, 255, 0);
+}
+/*===================================== Blog Pages =====================================*/
+#article{
+    padding: 100px 25px 0 0;
+}
+#blog{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.title{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 200;
+}
+.col1{
+    flex-basis: 50%;
+}
+/* Fix left column and scroll right column */
+.blog1-img {
+    height: 600px;
+    background:no-repeat url('files/beach.jpg');
+    background-position: left;
+    background-size: cover;
+    position: fixed;
+    height: 90%;
+    left: 0px;
+    top: 100px;
+    width: 730px;
+    padding: 1px;
+ 
+}
+.blog2-img {
+    height: 600px;
+    background:no-repeat url('files/kidney.jpg');
+    background-position: left;
+    background-size: cover;
+    position: fixed;
+    height: 90%;
+    left: 0px;
+    top: 100px;
+    width: 730px;
+    padding: 1px;
+}
+ol{
+    margin-left: 30px;
+    padding-top: 5px;
+}
+/* Align article title and the date to the bottom and left*/
+.col1 .blog1-img section,
+.col1 .blog2-img section{
+    text-align:left;
+    position: absolute;
+    bottom: 50px;
+    background: rgba(0,0,0,.4);
+    padding: 0 6rem 6rem 1rem;
+    width: 80%;
+    color: rgba(255,255,255,.8);
+}
+time[datetime]{
+    color: rgba(255,255,255,.7);
+}
+.col2{
+    flex-basis: 45%;
+    padding: 30px 25px 10px 25px;
+    text-align: justify;
+    font-size: 18px;
+    background: white;
+}
+/* Drop cap 1st letter of the 1st paragraph in the articles */
+.col2 p:first-of-type+p::first-letter { 
+    position: relative;  
+    float: left; 
+    font-size: 3em; 
+    line-height: 1; 
+    color: hsl(0, 0%, 0%); 
+    padding: 0 4px 2px 0; 
+    font-weight: bold; 
+}
+/* Create a horizontal line with the special character in the middle */
+.col2>:nth-child(1) {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+.col2>:nth-child(1) span { 
+    background:#fff; 
+    font-size: 30px;
+    vertical-align: bottom;
+}
+
+/*===================================== Adjust CSS for screen sizes =====================================*/
