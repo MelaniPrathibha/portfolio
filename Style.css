@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Add linear gradient for background with  */
+/* Add linear gradient for background */
 body{
     background:
     linear-gradient(135deg, #ffffff 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
@@ -33,6 +33,7 @@ ul{
     padding: 15px 0;
     width: 100%;
     background-color: rgb(255, 255, 255);
+    z-index: 1;
 }
 /* Logo */
 .heading{
@@ -54,24 +55,6 @@ ul{
     overflow: hidden;
 }
 
-/* nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    padding: 30px 0;
-    background:
-    linear-gradient(135deg, #ffffff 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
-    linear-gradient(225deg, #ffffff 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
-    background-color:#ffffff;
-    background-size: 64px 128px;    
-
-} */
-
-
 nav ul li a{
     color: #000;
     font-size: 18px;
@@ -85,12 +68,13 @@ nav ul li a{
     transition: max-height .5s ease-out;
 }
 /* Menu Icon */
+/* Style label tag */
 .hamb{
     cursor: pointer;
     float: right;
     padding: 10px 20px;
-}/* Style label tag */
-
+}
+/* Style span tag */
 .hamb-line {
     background: black;
     display: block;
@@ -98,8 +82,7 @@ nav ul li a{
     position: relative;
     width: 24px;
 
-} /* Style span tag */
-
+}
 .hamb-line::before,
 .hamb-line::after{
     background: black;
@@ -116,10 +99,10 @@ nav ul li a{
 .hamb-line::after{
     top: -5px;
 }
-
+ /* Hide checkbox */
 .side-menu {
     display: none;
-} /* Hide checkbox */
+}
 
 /* Toggle menu icon */
 .side-menu:checked ~ nav{
@@ -137,59 +120,17 @@ nav ul li a{
     top:0;
 }
 
-/* Responsiveness */
-@media (min-width: 868px) {
-    .header{
-        display: flex;
-        justify-content: space-between;
-    }
-    .heading{
-        padding-top: 12px;
-    }
-    .nav{
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background: none;
-    }
-    .menu li{
-        display: inline-block;
-        list-style: none;
-        margin: 10px 20px;
-        position: relative;
-    }
-    .menu li a{
-        padding: 0;
-    }
-    .menu li a::after{
-        content: "";
-        width: 0%;
-        height: 3px;
-        background: #4760dd;
-        position: absolute;
-        left: 0;
-        bottom: -6px;
-        transition: 0.5s;
-    }
-    .menu li a:hover::after{
-        width: 100%;
-    }
-
-    .hamb{
-        display: none;
-    }
-}
 /*===================================== Home Page =====================================*/
 #home{
     padding: 150px 25px 80px 25px;
 }
+/* Align all cotents as flex */
 #home>.main{
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
+/* main background image */
 .main .info{
     background-image: url(files/IMG-20210425-WA0002.jpg);
     width: 80%;
@@ -199,6 +140,7 @@ nav ul li a{
     background-position: center center; 
     z-index: -1;
 }
+/* Welcome message background styling */
 .main .info div{
     text-align:left;
     position: absolute;
@@ -208,6 +150,7 @@ nav ul li a{
     width: 50%;
     color: rgba(255,255,255,.8);
 }
+/* text boxes with box-shadow */
 .sideInfo , .skills{
     width: 270px;
     padding: 1.8rem;
@@ -216,14 +159,17 @@ nav ul li a{
     box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     top: -7px;
-    z-index: -1;
 }
+/* social media icons */
 .sideInfo span a img{
     width: 100px;
     padding: 15px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     
 }
+/* Typing animation for name */
 .name{
     font-size: 50px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -231,7 +177,7 @@ nav ul li a{
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
-    animation: typing 3.5s steps(40, end);
+    animation: typing 3.5s steps(40, end); /*end with 40 steps timing function at end*/
 }
 /* The typing effect */
 @keyframes typing {
@@ -278,6 +224,7 @@ h1{
 h1:not(.title, .name){
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+/* About me image */
 .content .about-img{
     padding-left: 25px;
     flex-basis: 35%;
@@ -286,6 +233,7 @@ img[alt="About-Image"]{
     width: 350px;
     border-radius: 0 50px 0 50px;
 }
+/* About me description */
 .content .description p{
     padding-top: 15px;
     width: 90%;
@@ -295,6 +243,7 @@ img[alt="About-Image"]{
 .description{
     flex-basis: 60%;
 }
+/* skills styling */
 .skills{
     margin: 20px 0;
     width: 600px;
@@ -309,6 +258,7 @@ img[alt="About-Image"]{
 .skills .list .skills-content .info:first-child{
     margin-top: 30px;
 }
+/* skill types loading animation */
 .info>span{
     opacity: 0;
     animation: showText 0.5s 1s linear forwards;
@@ -318,6 +268,7 @@ img[alt="About-Image"]{
         opacity: 1;
     }
 }
+/* progress bar loading animation */
 progress{
     width: 100%;
     transform: scaleX(0);
@@ -339,8 +290,8 @@ progress{
     align-items: center;
     padding: 25px 60px;
 }
+/* Transision border when hovering on blog image or title */
 #blogs section a{
-    text-decoration: none;
     display: flex;
     color: #000;
     transition: border 1s;
@@ -372,6 +323,7 @@ progress{
     flex-basis: 35%;
     padding-left: 15px;
 }
+/* Contact me image */
 .contactInfo img{
     border-radius: 50%;
     width: 250px;
@@ -381,7 +333,6 @@ progress{
     flex-basis: 60%;
 }
 .contactInfo div a{
-    text-decoration: none;
     color: #000;
 }
 /* add generated content using pseudo element ::before and child combinator */
@@ -426,6 +377,7 @@ button{
     border-radius: 15px;
     border: 0;
 }
+/* Form inputs validation */
 input:invalid{
     border: 2px solid red;
 } 
@@ -441,6 +393,7 @@ input:valid{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+/* capitalized all letters in the title */
 .title{
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -461,7 +414,6 @@ input:valid{
     top: 100px;
     width: 730px;
     padding: 1px;
- 
 }
 .blog2-img {
     height: 600px;
@@ -525,3 +477,154 @@ time[datetime]{
 }
 
 /*===================================== Adjust CSS for screen sizes =====================================*/
+@media screen and (max-width:800px) {
+    /* home */
+    #home{
+        padding: 60px 0;
+    }
+    #home>.main{
+        display: block;
+    }
+    .main .info{
+        background-image: url(files/Cropped.png);
+        width: 100%;
+    }
+    .name{
+        font-size: 35px;
+        letter-spacing: 0;
+    }
+    .main .info div{
+        bottom: 40px;
+        padding: 2rem 1rem;
+        width: 100%;
+        bottom: 50;
+        right: 0;      
+        position: relative;
+
+    }
+    .sideInfo{
+        width: 300px;
+        padding: 10px;
+    }   
+    .sideInfo span a img{
+        width: 60px;
+        padding: 10px;
+        display: inline-flex;
+        justify-content: space-between;
+    }
+    .info p:not(:nth-child(1)){
+        font-size: 20px;
+    }
+    .info p:nth-child(1){
+    font-size: 20px;
+    }
+
+    /* About section */
+    h1{
+        font-size: 40px;
+    }
+
+    .content .about-img, .description{
+        flex-basis: 100%;
+        padding: 0;
+    }
+    #about, #blogs{
+        padding: 15px;
+        margin:  0;
+    }
+    .content{
+        display: block;
+    }
+    img[alt="About-Image"]{
+        width: 250px;
+    }
+    .content .description p{
+        width: 100%;
+    }
+    .skills{
+        width: 300px;
+    }
+
+    /* blogs section */
+    #blogs section{
+        display: block;
+        align-items: center;
+        padding: 0;
+    }
+    #blogs section a{
+        display: block;
+    }
+    #blogs section a img{
+        width: 350px;
+        height: 400px;
+    }
+    #blogs section a div{
+        text-align: left;
+        width: 350px;
+        height: 400px;
+        padding: 0 10px;
+    }
+    
+    /* Blog Article */
+    #blog{
+        display: inline-block;
+    }
+    .col1, .col2{
+        flex-basis: 100%;
+    }
+    /* Fix left column and scroll right column */
+    .blog1-img, .blog2-img {
+        height: 600px;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: 412px;
+        padding: 1px;
+    }
+}
+@media (min-width: 800px) {
+    /* Responsiveness for nav bar*/
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .heading{
+        padding-top: 12px;
+    }
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background: none;
+        padding-right: 5px;
+    }
+    .menu li{
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+        position: relative;
+    }
+    .menu li a{
+        padding: 0;
+    }
+    .menu li a::after{
+        content: "";
+        width: 0%;
+        height: 3px;
+        background: #4760dd;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+    }
+    .menu li a:hover::after{
+        width: 100%;
+    }
+
+    .hamb{
+        display: none;
+    }
+}
+
